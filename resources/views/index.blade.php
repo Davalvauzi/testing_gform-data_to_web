@@ -19,12 +19,12 @@
 
         <div class="card border-0 shadow-sm mb-5">
             <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-                <h5 class="mb-0 fw-semibold">👨‍🏫 Dashboard Guru (Multi-Korektor)</h5>
-                <span class="badge bg-primary">Akses: Guru / Admin</span>
+                <h5 class="mb-0 fw-semibold">Dashboard (Multi-Korektor)</h5>
+                <span class="badge bg-primary">Akses: Admin</span>
             </div>
             <div class="card-body">
-                <p class="text-muted small">Guru dapat melihat semua data siswa, memeriksa esai, dan memberikan nilai
-                    langsung.</p>
+                {{-- <p class="text-muted small">Guru dapat melihat semua data siswa, memeriksa esai, dan memberikan nilai
+                    langsung.</p> --}}
 
                 <div class="table-responsive">
                     <table class="table table-hover align-middle">
@@ -124,19 +124,19 @@
 
         <div class="card border-0 shadow-sm">
             <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                <h5 class="mb-0 fw-semibold">🎓 Dashboard Siswa (Simulasi Akun Terlogin)</h5>
+                <h5 class="mb-0 fw-semibold">Dashboard Hasil (Simulasi Akun Terlogin)</h5>
                 <span class="badge bg-light text-primary">Akses: Siswa</span>
             </div>
             <div class="card-body">
-                <p class="text-muted small">Jika sistem auth sudah aktif, siswa hanya akan melihat baris miliknya
-                    sendiri berdasarkan email login mereka.</p>
+                {{-- <p class="text-muted small">Jika sistem auth sudah aktif, siswa hanya akan melihat baris miliknya
+                    sendiri berdasarkan email login mereka.</p> --}}
 
-                <div class="alert alert-info py-2">
+                {{-- <div class="alert alert-info py-2">
                     <strong>Info Simulasi:</strong> Menampilkan contoh ringkas raport di halaman siswa.
-                </div>
+                </div> --}}
 
                 <div class="row">
-                    @forelse($semuaTugas->take(2) as $tugas)
+                    @forelse($semuaTugas->take(100) as $tugas)
                         {{-- Hanya simulasi ambil 2 sampel data --}}
                         <div class="col-md-6 mb-3">
                             <div class="p-3 border rounded-3 bg-white shadow-sm">
@@ -149,7 +149,7 @@
                                 </div>
                                 <p class="text-muted small mb-2">Email: {{ $tugas->email }}</p>
                                 <div class="bg-light p-2 rounded text-center mb-0">
-                                    <span class="text-secondary small d-block">Nilai Tugas Anda</span>
+                                    <span class="text-secondary small d-block">Nilai Anda</span>
                                     <h3 class="fw-bold text-success mb-0">{{ $tugas->nilai }} <span
                                             class="fs-6 text-muted">/ 100</span></h3>
                                 </div>
