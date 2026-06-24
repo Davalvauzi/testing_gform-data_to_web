@@ -8,4 +8,4 @@ use App\Http\Controllers\HasilJawabanController;
 //     });
 
 Route::post('/api/terima-jawaban', [HasilJawabanController::class, 'store']);
-route::get('/', [HasilJawabanController::class, 'index']);
+Route::get('/', [HasilJawabanController::class, 'index']); // FIX: 'route' -> 'Route' (case-sensitive)

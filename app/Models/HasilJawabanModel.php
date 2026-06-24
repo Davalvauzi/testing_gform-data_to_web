@@ -7,23 +7,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class HasilJawabanModel extends Model
 {
-    //
     use HasFactory;
 
-    // 1. Tentukan nama tabelnya secara eksplisit (opsional, tapi baik untuk kejelasan)
+    // Nama tabel eksplisit
     protected $table = 'hasil_jawaban';
 
-    // 2. Daftarkan kolom mana saja yang boleh diisi secara massal saat memanggil TugasSiswa::create()
+    // FIX: tambah 'nama', 'status_koreksi', 'nilai' ke fillable
     protected $fillable = [
+        'nama',
         'email',
         'jawaban_1',
         'jawaban_2',
-        'jawaban_3'
+        'jawaban_3',
+        'status_koreksi',
+        'nilai',
     ];
 
-    // 3. (Opsional) Mengatur nilai default bawaan model jika tidak diisi saat insert data
-    protected $attributes = [
-        'status_koreksi' => 'Belum Dikoreksi',
-        'nilai' => 0,
-    ];
+    // FIX: $attributes dihapus — default value sekarang ditangani di migration (kolom DB)
+    // Kalau dibiarkan, Laravel ikut-ikutan insert kolom ini walau belum ada di tabel
 }

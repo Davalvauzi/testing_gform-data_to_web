@@ -13,7 +13,6 @@ class HasilJawabanController extends Controller
      */
     public function index()
     {
-        //
         // Ambil semua data tugas siswa dari database
         $semuaTugas = HasilJawabanModel::latest()->get();
 
@@ -22,21 +21,14 @@ class HasilJawabanController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
         try {
-            // Simpan ke tabel hasil_jawabans
+            // Simpan ke tabel hasil_jawaban
             HasilJawabanModel::create([
+                'nama'      => $request->nama_siswa,      // FIX: tambah field nama
                 'email'     => $request->email_siswa,
                 'jawaban_1' => $request->jawaban_soal_1,
                 'jawaban_2' => $request->jawaban_soal_2,
@@ -51,35 +43,9 @@ class HasilJawabanController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    public function create() {}
+    public function show(string $id) {}
+    public function edit(string $id) {}
+    public function update(Request $request, string $id) {}
+    public function destroy(string $id) {}
 }

@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('hasil_jawaban', function (Blueprint $table) {
             $table->id();
+            $table->string('nama')->nullable();                              // FIX: tambah kolom nama
             $table->string('email');
-            $table->text('jawaban_1');
-            $table->text('jawaban_2');
-            $table->text('Jawaban_3');
+            $table->text('jawaban_1')->nullable();
+            $table->text('jawaban_2')->nullable();
+            $table->text('jawaban_3')->nullable();
+            $table->string('status_koreksi')->default('Belum Dikoreksi');   // FIX: tambah kolom ini
+            $table->integer('nilai')->default(0);                           // FIX: tambah kolom ini
             $table->timestamps();
         });
     }

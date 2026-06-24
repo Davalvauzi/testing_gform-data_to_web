@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prototipe Dashboard Les v1.0</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bar/css/bootstrap.min.css" rel="stylesheet">
+    {{-- FIX: URL Bootstrap sebelumnya ada '/bar/css/' yang salah --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body class="bg-light">
@@ -33,6 +34,7 @@
                                 <th>Email</th>
                                 <th>Jawaban Soal 1</th>
                                 <th>Jawaban Soal 2</th>
+                                <th>Jawaban Soal 3</th>
                                 <th>Status</th>
                                 <th>Nilai</th>
                                 <th>Aksi</th>
@@ -47,6 +49,8 @@
                                             style="max-width: 150px;">{{ $tugas->jawaban_1 }}</small></td>
                                     <td><small class="text-truncate d-inline-block"
                                             style="max-width: 150px;">{{ $tugas->jawaban_2 }}</small></td>
+                                    <td><small class="text-truncate d-inline-block"
+                                            style="max-width: 150px;">{{ $tugas->jawaban_3 }}</small></td>
                                     <td>
                                         @if ($tugas->status_koreksi == 'Belum Dikoreksi')
                                             <span class="badge bg-danger">Belum Dikoreksi</span>
